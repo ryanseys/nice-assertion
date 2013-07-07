@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
 import base64
 import json
-import binascii
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-TITLE = "Nice Ass-ertion!"
+TITLE = "Nice Assertion!"
 NOT_VALID_ASSERTION = "Invalid assertion! :("
 VALID_ASSERTION = "Success! Valid assertion! :)"
 
@@ -37,16 +36,14 @@ def assertion():
             payload2 = base64.b64decode(second_arr[1])
             sig2 = second_arr[2]
 
-            h1json = json.dumps(json.loads(header1), indent=4, separators=(',', ': '))
-            p1json = json.dumps(json.loads(payload1), indent=4, separators=(',', ': '))
-            h2json = json.dumps(json.loads(header2), indent=4, separators=(',', ': '))
-            p2json = json.dumps(json.loads(payload2), indent=4, separators=(',', ': '))
+            kwargs = {'indent': 4, 'separators': (',', ': ')}
+            h1json = json.dumps(json.loads(header1), **kwargs)
+            p1json = json.dumps(json.loads(payload1), **kwargs)
+            h2json = json.dumps(json.loads(header2), **kwargs)
+            p2json = json.dumps(json.loads(payload2), **kwargs)
 
         except Exception as e:
-            return str(e)
-
-            #result += "SIGNATURE 1: " + base64.b64decode(signature1) + "\n"
-            #result += "SIGNATURE 2: " + base64.b64decode(signature2) + "\n"
+            return NOT_VALID_ASSERTION + " Error: " + str(e)
 
         return render_template('assertion.html', title=TITLE, header1=h1json, payload1=p1json, header2=h2json, payload2=p2json, sig1=sig1, sig2=sig2)
     else:
