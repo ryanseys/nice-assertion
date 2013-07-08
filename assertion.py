@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-TITLE = "Nice Assertion!"
+TITLE = "Nice assertion! ;)"
 NOT_VALID_ASSERTION = "Invalid assertion! :("
 VALID_ASSERTION = "Success! Valid assertion! :)"
 
