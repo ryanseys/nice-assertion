@@ -1,1 +1,1 @@
-web: gunicorn assertion:index
+web: gunicorn assertion:app

@@ -3,7 +3,7 @@ import base64
 import json
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
+# app.config['DEBUG'] = True
 
 TITLE = "Nice assertion! ;)"
 NOT_VALID_ASSERTION = "Invalid assertion! :("
