@@ -2,6 +2,10 @@ nice-assertion
 ==============
 nice-assertion is a small python-based (Flask) webapp for showing a nicer, more informative Persona assertion.
 
+Demo
+====
+http://assertion.herokuapp.com
+
 Setup
 ==========
 1. Clone this bitch and install Flask (`$ pip install Flask`)
