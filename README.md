@@ -4,7 +4,7 @@ nice-assertion is a small python-based (Flask) webapp for showing a nicer, more 
 
 Demo
 ====
-http://assertion.herokuapp.com
+https://assertion.herokuapp.com
 
 Setup
 ==========
