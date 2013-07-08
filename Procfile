@@ -1,1 +1,1 @@
-web: python assertion.py
+web: gunicorn assertion:index
